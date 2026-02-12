@@ -1,0 +1,65 @@
+{
+  "name": "SpareParts and Salesprice calculation",
+  "projectId": "ca13a3f2-6582-4287-b59f-ad0cd4ef9dad",
+  "description": "New and improved automation for the Salesparts extraction and the sales price calculation.",
+  "main": "Process sequence.xaml",
+  "dependencies": {
+    "UiPath.Database.Activities": "[1.7.1]",
+    "UiPath.Excel.Activities": "[2.20.2]",
+    "UiPath.Form.Activities": "[25.2.1]",
+    "UiPath.FormActivityLibrary": "[2.0.8]",
+    "UiPath.FormActivityLibrary.Contracts": "[2.0.8]",
+    "UiPath.System.Activities": "[23.4.5]",
+    "UiPath.UIAutomation.Activities": "[23.4.8]",
+    "UiPathTeam.StatusProgress.Activities": "[1.0.3]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.4.5.0",
+  "projectVersion": "2.1.5",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": false,
+    "isAttended": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Process sequence.xaml",
+      "uniqueId": "a52bf3ca-a996-44a2-9c11-84a3ecc56824",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

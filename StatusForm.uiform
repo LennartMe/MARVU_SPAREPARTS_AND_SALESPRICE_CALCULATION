@@ -1,0 +1,26 @@
+﻿{
+  "Metadata": {
+    "Id": "55389713-b23b-4958-8acb-b664039fe239",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "StatusForm",
+    "Theme": "Default",
+    "ShowInTaskbar": false,
+    "ShowMargin": false,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "tag": "h3",
+        "content": "Message",
+        "key": "Message",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      }
+    ]
+  }
+}
