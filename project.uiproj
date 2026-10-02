@@ -1,0 +1,6 @@
+{
+  "Name": "SpareParts and Salesprice calculation",
+  "ProjectType": "Process",
+  "Description": "New and improved automation for the Salesparts extraction and the sales price calculation.",
+  "MainFile": "Process sequence.xaml"
+}

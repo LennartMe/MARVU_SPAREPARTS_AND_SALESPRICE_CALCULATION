@@ -151,13 +151,9 @@
       <AssemblyReference>System.Windows.Forms</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main process sequence" sap:VirtualizedContainerService.HintSize="1178,11304.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="Main process sequence" sap:VirtualizedContainerService.HintSize="2801,11800" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="Excelnumber">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="1" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="Excelnumber" />
       <Variable x:TypeArguments="x:String" Name="Item" />
       <Variable x:TypeArguments="x:String" Name="Ordernr" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Result" />
@@ -180,8 +176,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetEnvironmentVariable DisplayName="Get Variable Active User" sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="UserName" VariableValue="[User]" />
-    <Assign DisplayName="Assign UserFolder" sap:VirtualizedContainerService.HintSize="646,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
+    <ui:GetEnvironmentVariable DisplayName="Get Variable Active User" sap:VirtualizedContainerService.HintSize="718,113" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="UserName" VariableValue="[User]" />
+    <Assign DisplayName="Assign UserFolder" sap:VirtualizedContainerService.HintSize="718,175" sap2010:WorkflowViewState.IdRef="Assign_18">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[UserFolder]</OutArgument>
       </Assign.To>
@@ -189,8 +185,8 @@
         <InArgument x:TypeArguments="x:String">[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log automation started for user" sap:VirtualizedContainerService.HintSize="646,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Automation Started for user: &quot; + User]" />
-    <ufa:ShowFormActivity DisplayName="Show Input Form OrderNumber" FormId="c48ab7b5-75ff-4dc3-8589-6823083d265f" sap:VirtualizedContainerService.HintSize="646,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" InstanceName="SparePartsAutomationInputForm" IsAsync="False" Left="[Cint((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width/2)-275)]" Title="Input Form" Top="[Cint((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height/2)-275)]" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
+    <ui:LogMessage DisplayName="Log automation started for user" sap:VirtualizedContainerService.HintSize="718,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Automation Started for user: &quot; + User]" />
+    <ufa:ShowFormActivity DisplayName="Show Input Form OrderNumber" FormId="c48ab7b5-75ff-4dc3-8589-6823083d265f" sap:VirtualizedContainerService.HintSize="718,221" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" InstanceName="SparePartsAutomationInputForm" IsAsync="False" Left="[Cint((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width/2)-275)]" Title="Input Form" Top="[Cint((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height/2)-275)]" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
       <ufa:ShowFormActivity.Arguments>
         <InOutArgument x:TypeArguments="x:String" x:Key="OrderNumber">[OrderNr]</InOutArgument>
       </ufa:ShowFormActivity.Arguments>
@@ -220,9 +216,9 @@
         </InArgument>
       </ufa:ShowFormActivity.Width>
     </ufa:ShowFormActivity>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Sparepart lists" sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[UserFolder+&quot;\Desktop\Sparepart lists&quot;]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Ordernumber Folder" sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[UserFolder+&quot;\Desktop\Sparepart lists\Spareparts &quot; + OrderNr]" />
-    <Assign DisplayName="Set query" sap:VirtualizedContainerService.HintSize="646,118" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Sparepart lists" sap:VirtualizedContainerService.HintSize="718,113" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[UserFolder+&quot;\Desktop\Sparepart lists&quot;]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Ordernumber Folder" sap:VirtualizedContainerService.HintSize="718,113" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[UserFolder+&quot;\Desktop\Sparepart lists\Spareparts &quot; + OrderNr]" />
+    <Assign DisplayName="Set query" sap:VirtualizedContainerService.HintSize="718,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ItemsQuery]</OutArgument>
       </Assign.To>
@@ -243,30 +239,30 @@
 "INNER Join dbo.VERBIND V On V.VB_OBJIDNR1 = P.PJ_NUMMER   And V.VB_OBJTYP1 = 6  And V.VB_OBJTYP2 = 2 " + Environment.newline +
 "INNER Join dbo.AKBER2 A On A.B_ZUST = S.SP_KENN	INNER Join dbo.NFSTAMM N On V.VB_OBJIDNR2 = N.NFT_IDNR  " + Environment.newline +
 "INNER Join dbo.AKBER2 AN On AN.B_ZUST = N.NFT_ZUST  LEFT Join dbo.VERBIND VP On VP.VB_OBJIDNR2 = N.NFT_IDNR  And VP.VB_OBJTYP1 = 30  And VP.VB_OBJTYP2 = 2 " + Environment.newline +
-"Where PJ_NUMMER = (Select PJ_Nummer From PROJEKT PR Where LTRIM(RTRIM(PR.PJ_BESCHR0)) = '"+OrderNr+"' and LTRIM(RTRIM(PR.PJ_NAME)) = 'Engineering') " + Environment.newline +
+"Where PJ_NUMMER IN (Select PJ_Nummer From PROJEKT PR Where LTRIM(RTRIM(PR.PJ_BESCHR0)) = '"+OrderNr+"' and LTRIM(RTRIM(PR.PJ_NAME)) = 'Engineering') " + Environment.newline +
 "Order By PJ_BESCHR0"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Running itemsquery" sap:VirtualizedContainerService.HintSize="646,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Running query: &quot; + Environment.newline + Environment.NewLine +&#xA;ItemsQuery]" />
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_Result]" DisplayName="Execute itemsquery" ExistingDbConnection="[db_Profile]" sap:VirtualizedContainerService.HintSize="646,120.66666666666667" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[ItemsQuery]">
+    <ui:LogMessage DisplayName="Log Running itemsquery" sap:VirtualizedContainerService.HintSize="718,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Running query: &quot; + Environment.newline + Environment.NewLine +&#xA;ItemsQuery]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_Result]" DisplayName="Execute itemsquery" ExistingDbConnection="[db_Profile]" sap:VirtualizedContainerService.HintSize="718,121" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[ItemsQuery]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
     </ui:ExecuteQuery>
-    <ui:OutputDataTable DataTable="[dt_Result]" DisplayName="Output query result" sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dt_resultTostring]" />
-    <ui:LogMessage DisplayName="Log output query" sap:VirtualizedContainerService.HintSize="646,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[dt_resultTostring]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ChangeForm.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="646,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ChangeForm.xaml">
+    <ui:OutputDataTable DataTable="[dt_Result]" DisplayName="Output query result" sap:VirtualizedContainerService.HintSize="718,113" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dt_resultTostring]" />
+    <ui:LogMessage DisplayName="Log output query" sap:VirtualizedContainerService.HintSize="718,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[dt_resultTostring]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ChangeForm.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="718,146" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ChangeForm.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Message">[dt_Result.rowcount.tostring + " regels gevonden."]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_result]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="646,8189.333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_result]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="718,8584" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Loop through each result to create files and update query outputs with up to date information" sap:VirtualizedContainerService.HintSize="612,8037.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Loop through each result to create files and update query outputs with up to date information" sap:VirtualizedContainerService.HintSize="685,8434" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="1" Name="rownumber" />
             </Sequence.Variables>
@@ -275,7 +271,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign componenttype" sap:VirtualizedContainerService.HintSize="578,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Assign componenttype" sap:VirtualizedContainerService.HintSize="650,175" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[ComponentType]</OutArgument>
               </Assign.To>
@@ -283,7 +279,7 @@
                 <InArgument x:TypeArguments="x:String">[CurrentRow("ComponentType").ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Remove comma's from string" sap:VirtualizedContainerService.HintSize="578,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign DisplayName="Remove comma's from string" sap:VirtualizedContainerService.HintSize="650,175" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[ComponentType]</OutArgument>
               </Assign.To>
@@ -291,7 +287,7 @@
                 <InArgument x:TypeArguments="x:String">[ComponentType.Replace("/","-")]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign item" sap:VirtualizedContainerService.HintSize="578,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign item" sap:VirtualizedContainerService.HintSize="650,175" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[Item]</OutArgument>
               </Assign.To>
@@ -299,7 +295,7 @@
                 <InArgument x:TypeArguments="x:String">[Currentrow("Item").ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <Sequence DisplayName="Create workbook and Add Header info to workbook" sap:VirtualizedContainerService.HintSize="578,2574" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence DisplayName="Create workbook and Add Header info to workbook" sap:VirtualizedContainerService.HintSize="650,2798" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:DatabaseConnection" Name="db_secondProfile" />
                 <Variable x:TypeArguments="x:String" Name="partinfoQuery" />
@@ -311,7 +307,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+              <Assign sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_15">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[partinfoQuery]</OutArgument>
                 </Assign.To>
@@ -319,13 +315,13 @@
                   <InArgument x:TypeArguments="x:String">["SELECT NFT_STK0, NFT_STL0, NFT_STL1, NFT_STL7,NFT_REVISION-1 NFT_REVISION, NFT_VERSION-1 AS NFT_VERSION FROM NFSTAMM WITH (NOLOCK) WHERE NFT_IDNR = '"+item+"'"]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[partinfoQuery]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[partinfoQuery]" />
               <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" ConnectionString="Data Source=192.168.25.3\profile;Initial Catalog=profile;Persist Security Info=True;User ID=anw;Password=anw;Encrypt=False" DataTable="[dt_partinfo]" DisplayName="Run query" sap:VirtualizedContainerService.HintSize="434,120.66666666666667" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" ProviderName="Microsoft.Data.SqlClient" Sql="[partinfoQuery]">
                 <ui:ExecuteQuery.Parameters>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:ExecuteQuery.Parameters>
               </ui:ExecuteQuery>
-              <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_9">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[Partid]</OutArgument>
                 </Assign.To>
@@ -333,8 +329,8 @@
                   <InArgument x:TypeArguments="x:String">[dt_partinfo.AsEnumerable().Where(Function(row) Not row.IsNull("NFT_stk0")).Select(Function(row) row.Field(Of string)("NFT_stk0")).FirstOrDefault()]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[Partid]" />
-              <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[Partid]" />
+              <Assign sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_10">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[ExecutionTime]</OutArgument>
                 </Assign.To>
@@ -342,8 +338,8 @@
                   <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("dd-MM-yyyy")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[ExecutionTime]" />
-              <Assign DisplayName="Assign PartDescription" sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[ExecutionTime]" />
+              <Assign DisplayName="Assign PartDescription" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_11">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[PartDescription]</OutArgument>
                 </Assign.To>
@@ -351,7 +347,7 @@
                   <InArgument x:TypeArguments="x:String">[If(dt_partinfo.Rows.Count &gt; 0, dt_partinfo.Rows(0)("NFT_STL0").ToString() &amp; If(dt_partinfo.Rows(0)("NFT_STL1") IsNot Nothing AndAlso dt_partinfo.Rows(0)("NFT_STL1").ToString().Length &gt; 0, " - " &amp; dt_partinfo.Rows(0)("NFT_STL1").ToString(), "") &amp; " - " &amp; dt_partinfo.Rows(0)("NFT_STL7").ToString(), "")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log partdescription" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[partdescription]" />
+              <ui:LogMessage DisplayName="Log partdescription" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[partdescription]" />
               <Assign DisplayName="CleanPartDescription for filename" sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_19">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[CleanPartDescription]</OutArgument>
@@ -682,9 +678,7 @@
             </Sequence>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ChangeForm.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="578,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ChangeForm.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Excel &quot;+excelnumber.ToString+&quot; samenstellen..&quot;" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Message">["Excel "+excelnumber.ToString+" samenstellen.."]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <Assign DisplayName="add 1 to excelnumber" sap:VirtualizedContainerService.HintSize="578,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_20">
